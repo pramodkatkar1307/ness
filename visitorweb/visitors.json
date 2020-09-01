@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "Sagar",
+      "mobile": "8943089421",
+      "email": "sagar@gmail.com",
+      "entryTime": "20-08-2020 11:45 AM",
+      "toMeet": "Kishore"
+    },
+    {
+      "id": 2,
+      "name": "Maneesh",
+      "mobile": "7858385837",
+      "email": "maneesh@gmail.com",
+      "entryTime": "26-08-2020 11:45 AM",
+      "exitTime":"26-08-2020 12:45 AM",
+      "toMeet": "Aditi"
+    },
+    {
+      "id": 3,
+      "name": "Kumar",
+      "mobile": "9984588375",
+      "email": "kumar@gmail.com",
+      "entryTime": "27-08-2020 09:15 AM",
+      "toMeet": "Midhun"
+    }
+  ]

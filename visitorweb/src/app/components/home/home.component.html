@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <h2>Visitors</h2>
+        <div *ngFor="let v of visitors|async">
+            <visitor-card  [data]="v"></visitor-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="card" highlight>
+    <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/assets/default.png" alt="{{visitor.name}}" />
+                </div>
+                <div class="col-md-8">
+                    <table class="table table-sm">
+                        <tr>
+                            <td>Name</td>
+                            <th>{{visitor.name}}</th>
+                        </tr>
+                        <tr>
+                            <td>Mobile</td>
+                            <th>{{visitor.mobile}}</th>
+                        </tr>
+                        <tr>
+                            <td>Entry Time</td>
+                            <th>{{visitor.entryTime|date:'medium'}}</th>
+                        </tr>
+                        <tr>
+                            <td>Exit Time</td>
+                            <th>{{visitor.exitTime|exitstatus}}</th>
+                        </tr>
+                        <tr>
+                            <td>To meet</td>
+                            <th>{{visitor.toMeet}}</th>
+                        </tr>
+                        <tr>
+                            <a [routerLink]="['/editvisitor', visitor.id]" class="btn btn-sm btn-secondary">Update</a>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

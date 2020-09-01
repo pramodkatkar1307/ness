@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <h2>Add Visitor</h2>
+        <form #frm="ngForm" (ngSubmit)="save(frm)" >
+            <div class="form-group">
+                <label for="name">Visitor name</label>
+                <input type="text" name="name" #vname="ngModel" [(ngModel)]="visitor.name" class="form-control" minlength="3" required/>
+                <div *ngIf="vname.errors && vname.touched">
+                    <div class="text-danger" *ngIf="vname.errors.required">Name cannot be empty</div>
+                    <div class="text-danger" *ngIf="vname.errors.minlength">Minimum {{vname.errors.minlength.requiredLength}} characters required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Mobile</label>
+                <input type="text" name="mobile" #mob="ngModel" [(ngModel)]="visitor.mobile" class="form-control" required/>
+                <div *ngIf="mob.errors && mob.touched">
+                    <div class="text-danger" *ngIf="mob.errors.required">Mobile number cannot be empty</div>                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Email</label>
+                <input type="email" name="email" #email="ngModel" [(ngModel)]="visitor.email" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="name">Entry Time</label>
+                <input type="datetime" name="entryTime" #eTime="ngModel" [(ngModel)]="visitor.entryTime" class="form-control" required/>
+                <div *ngIf="eTime.errors && eTime.touched">
+                    <div class="text-danger" *ngIf="eTime.errors.required">Entry time cannot be empty</div>                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Whom to meet</label>
+                <input type="text" name="toMeet" #toMeet="ngModel" [(ngModel)]="visitor.toMeet" class="form-control" required/>
+                <div *ngIf="toMeet.errors && toMeet.touched">
+                    <div class="text-danger" *ngIf="toMeet.errors.required">Whom to meet cannot be empty</div>                    
+                </div>
+            </div>
+            <div class="form-group">
+                <button [disabled]="!frm.valid" class="btn btn-success" type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

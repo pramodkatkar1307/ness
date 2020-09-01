@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <h2>Update Visitor Data</h2>
+        <form [formGroup]="visitorForm" (ngSubmit)="update()">
+            <div class="form-group">
+                <label for="name">Visitor name</label>
+                <input type="text" name="name" [formControl]="name" class="form-control"/>
+                <div *ngIf="name.errors && name.touched">
+                    <div class="text-danger" *ngIf="name.errors.required">Name cannot be empty</div>
+                    <div class="text-danger" *ngIf="name.errors.minlength">Minimum {{name.errors.minlength.requiredLength}} charaters required</div>
+                </div>         
+            </div>
+            <div class="form-group">
+                <label for="name">Mobile</label>
+                <input type="text" name="mobile" [formControl]="mobile" class="form-control"/>
+                <div *ngIf="mobile.errors && mobile.touched">
+                    <div class="text-danger" *ngIf="mobile.errors.required">Mobile number cannot be empty</div>                    
+                </div>  
+            </div>
+            <div class="form-group">
+                <label for="name">Email</label>
+                <input type="email" name="email" [formControl]="email" class="form-control"/>
+            </div>            
+            <div class="form-group">
+                <label for="name">Whom to meet</label>
+                <input type="text" name="toMeet" [formControl]="toMeet" class="form-control"/>
+                <div *ngIf="toMeet.errors && toMeet.touched">
+                    <div class="text-danger" *ngIf="toMeet.errors.required">Whom to meet cannot be empty</div>                    
+                </div>  
+            </div>
+            <div class="form-group">
+                <label for="name">Entry Time</label>
+                <input type="datetime" name="entryTime" [formControl]="entryTime" class="form-control"/>
+                <div *ngIf="entryTime.errors && entryTime.touched">
+                    <div class="text-danger" *ngIf="entryTime.errors.required">Entry time cannot be empty</div>                    
+                </div> 
+            </div>
+            <div class="form-group">
+                <label for="name">Exit Time</label>
+                <input type="datetime" name="exitTime" [formControl]="exitTime" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <button [disabled]="!visitorForm.valid" class="btn btn-success" type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
